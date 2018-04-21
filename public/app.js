@@ -71,14 +71,8 @@ $(document).ready(function () {
 			method: "GET",
 			url: "/scrape"  
 		}).done(function( msg ) {
-				$.ajax({
-				method: "GET",
-				url: "/"
-			}).then(function(res) {
 
-				console.log(res);
-			});
-
+			window.location.reload();
 		});
 
 	});

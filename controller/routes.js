@@ -71,10 +71,10 @@ router.get('/scrape', function(req, res) {
 			}//end if
 
 		});	
-	
+	res.sendStatus(200);
 	});
 
-	res.sendStatus(200).end(); 
+	// res.sendStatus(200);
 
 });
 

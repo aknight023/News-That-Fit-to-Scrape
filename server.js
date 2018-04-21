@@ -14,7 +14,11 @@ var PORT = process.env.PORT || 8080;
 var app = express();
 
 // Configure middleware
-mongoose.connect("mongodb://localhost/newscraper");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/newscraper";
+// For Heroku mongo 
+mongoose.Promise = Promise;
+
+mongoose.connect(MONGODB_URI);
 // Use express.static to serve the public folder as a static directory
 app.use(express.static("public"));
 // Use body-parser for handling form submissions
