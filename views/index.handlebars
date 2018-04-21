@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-12">
+    {{#each article}}
+    <div class="card my-4">
+      <h4 class="card-header text-center" onclick="location.href='{{this.link}}'">{{this.title}}</h4>
+      <div class="card-body">
+        <div class="summary"><strong>Summary: </strong>{{this.summary}}</div>
+        <div class="allcomment my-4"><strong>Comments: </strong>
+        {{#each this.note}}
+        <ul class="list-group">          
+          <li data-commentid="{{this._id}}" class="list-group-item">By {{this.title}}: {{this.body}} <button class="btn btn-primary delete float-right">Deleted Commment</button></li>
+        </ul>
+        {{/each}}
+        </div>      
+        <button data-articleid="{{this._id}}" type="button" class="btn btn-primary viewcommentfrom" data-toggle="modal" data-target="#exampleModalCenter">
+          Post a New Comment
+        </button>
+      </div>    
+    </div>
+    {{/each}}
+  </div>
+</div>
